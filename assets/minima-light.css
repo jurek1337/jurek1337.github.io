@@ -645,15 +645,6 @@ table td {
   color: #099;
 }
 
-img {
-  border-radius: 10px;
-}
-
-.container {
-  display: flex; /* Ustawia divy obok siebie */
-  justify-content: space-between; /* Rozmieszcza elementy równomiernie */
-}
-
 /*# sourceMappingURL=main.css.map */
 
 img {
@@ -716,4 +707,18 @@ img {
   aspect-ratio: 1; 
   margin: 5%;
   padding: 1%;
+}
+.site-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: inherit;
+}
+
+.site-title img {
+  height: 30px;
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
 }
