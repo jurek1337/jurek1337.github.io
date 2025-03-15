@@ -19,26 +19,6 @@
 <div id="skin-switch-box" style="display: block; text-align: right; padding: 10px;">
   <img src="{{ '/bulb.png' | absolute_url}}" alt="BULB">
 </div>
-<!-- <style>
-  /* Ukrywamy stronę na start, żeby uniknąć mignięcia */
-  body {
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    background: #181818;
-  }
-
-  /* Płynna zmiana stylu */
-  .fade-out {
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-  }
-  .fade-in {
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
-  }
-</style> -->
-
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
@@ -51,26 +31,23 @@
       return;
     }
 
-    var basePath = "{{ '/assets/' | absolute_url }}"; // Pobiera pełną ścieżkę
+    var basePath = "{{ '/assets/' | absolute_url }}";
     var defaultCSS = basePath + "main.css";
     var lightCSS = basePath + "minima-light.css"; 
     var prevSkin = localStorage.getItem("minima-ss") || defaultCSS;
 
     console.log("Załadowany styl:", prevSkin);
 
-    // **1. Ustaw poprawny CSS PRZED wyświetleniem strony**
     if (prevSkin !== defaultCSS) {
       metaTag.href = prevSkin + "?v=" + new Date().getTime();
       console.log("Ustawiono styl na:", metaTag.href);
     }
 
-    // **2. Pokaż stronę dopiero po załadowaniu CSS**
     setTimeout(() => {
       document.body.style.visibility = "visible";
       document.body.style.opacity = "1";
     }, 50);
 
-    // **3. Obsługa zmiany stylu Z PŁYNNĄ ANIMACJĄ**
     skinSwitchBox.addEventListener("click", function () {
       console.log("Kliknięto zmianę stylu!");
 
@@ -79,7 +56,6 @@
 
       console.log("Nowy styl:", newCSS);
 
-      // **Dodajemy efekt zanikania przed zmianą**
       document.body.classList.add("fade-out");
       document.body.style.visibility = "hidden";
       document.body.style.opacity = "0";
@@ -87,14 +63,12 @@
         metaTag.href = newCSS + "?v=" + new Date().getTime();
         localStorage.setItem("minima-ss", newCSS);
         console.log("Zapisano nowy styl:", localStorage.getItem("minima-ss"));
-
-        // **Dodajemy efekt pojawiania po zmianie**
         
         document.body.classList.remove("fade-out");
         document.body.classList.add("fade-in");
         document.body.style.visibility = "visible";
         document.body.style.opacity = "1";
-      }, 300); // Musi być równe czasowi `transition` w CSS (0.3s)
+      }, 300);
     });
   });
 </script>
