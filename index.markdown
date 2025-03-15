@@ -3,6 +3,7 @@
 # To modify the layout, see https://jekyllrb.com/docs/themes/#overriding-theme-defaults
 
 layout: home
+title: "Home"
 ---
 # Welcome at my page!
 My name is Daniel and currently I am studying at 3th year on Cracow University of Technology. I can speak Polish, English (C1) and a little Italian (currently learning at A1)
