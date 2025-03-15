@@ -5,7 +5,6 @@
 layout: home
 title: "Home"
 ---
-# Welcome at my page!
 My name is Daniel and currently I am studying at 3th year on Cracow University of Technology. I can speak Polish, English (C1) and a little Italian (currently learning at A1)
 
 I'm interested in social mechanisms, music, IT and computer games 😛
