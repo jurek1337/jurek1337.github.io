@@ -1,0 +1,22 @@
+---
+layout: post
+title:  "AI Stable Diffusion Server"
+date:   2025-03-03 17:41:48 +0100
+categories: posts
+---
+One day in old friend's meetup we were talking about Artiffical Intelligence and image generation. And there's and invention - homemade server, which doesn't have a little amount of credits to use per day.
+So, we go to work. We combined rubbish and parts from closed computer shop.
+
+![AI Server First Version]({{ '/assets/server.jpg' | relative_url }})
+*First version of the server, with underclocked Pentium E6500, which is not supported by ROCm*
+
+# The final specs
+* *CPU* Ryzen 3 4100
+* *RAM* 16GB DDR4 2400
+* *GPU* ASUS RX 580 4GB
+* *PSU* Thermaltake Litepower 650W
+* *HDD* Toshiba 1TB
+* *OS* Red Hat Enterprise Linux
+
+Works still in progress... we first try completely rubbish Conroe-based system with 4GB of RAM, but ROCm doesn't support this.
+If I done, you can see something [here](http://ai.danielakajerzy.net). And I wrote some new informations.

@@ -1,0 +1,39 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  <!-- <link rel="stylesheet" id="stylesheet" href="{{ "/assets/main.css" | relative_url }}"> -->
+  <link rel="icon" href="{{ '/favicon.png' | relative_url }}" type="image/x-icon" />
+
+  {%- feed_meta -%}
+  {%- if jekyll.environment == 'production' and site.google_analytics -%}
+    {%- include google-analytics.html -%}
+  {%- endif -%}
+  <style>
+    
+    body {
+      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .fade-out {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .fade-in {
+      opacity: 1;
+      transition: opacity 0.3s ease-in-out;
+    }
+  </style>
+
+  <script>
+    (function () {
+      var defaultCSS = "/assets/main.css";
+      var lightCSS = "/assets/minima-light.css";
+      var prevSkin = localStorage.getItem("minima-ss") || defaultCSS;
+      document.write('<link rel="stylesheet" id="stylesheet" href="' + prevSkin + '?v=' + new Date().getTime() + '">');
+    })();
+  </script>
+</head>

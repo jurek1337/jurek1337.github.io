@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: "en" }}">
+
+  {%- include head.html -%}
+
+  <body>
+
+    {%- include header.html -%}
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </main>
+
+    {%- include footer.html -%}
+
+<!-- temp -->
+<div id="skin-switch-box" style="display: block; text-align: right; padding: 10px;">
+  <img src="{{ '/bulb.png' | absolute_url}}" alt="BULB">
+</div>
+<!-- <style>
+  /* Ukrywamy stronę na start, żeby uniknąć mignięcia */
+  body {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    background: #181818;
+  }
+
+  /* Płynna zmiana stylu */
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  .fade-in {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+  }
+</style> -->
+
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var metaTag = document.getElementById("stylesheet");
+    var skinSwitchBox = document.getElementById("skin-switch-box");
+    console.log("metaTag:", metaTag);
+    console.log("skinSwitchBox:", skinSwitchBox);
+    if (!metaTag || !skinSwitchBox) {
+      console.error("Nie znaleziono metaTag lub skinSwitchBox!");
+      return;
+    }
+
+    var basePath = "{{ '/assets/' | absolute_url }}"; // Pobiera pełną ścieżkę
+    var defaultCSS = basePath + "main.css";
+    var lightCSS = basePath + "minima-light.css"; 
+    var prevSkin = localStorage.getItem("minima-ss") || defaultCSS;
+
+    console.log("Załadowany styl:", prevSkin);
+
+    // **1. Ustaw poprawny CSS PRZED wyświetleniem strony**
+    if (prevSkin !== defaultCSS) {
+      metaTag.href = prevSkin + "?v=" + new Date().getTime();
+      console.log("Ustawiono styl na:", metaTag.href);
+    }
+
+    // **2. Pokaż stronę dopiero po załadowaniu CSS**
+    setTimeout(() => {
+      document.body.style.visibility = "visible";
+      document.body.style.opacity = "1";
+    }, 50);
+
+    // **3. Obsługa zmiany stylu Z PŁYNNĄ ANIMACJĄ**
+    skinSwitchBox.addEventListener("click", function () {
+      console.log("Kliknięto zmianę stylu!");
+
+      var currentCSS = metaTag.href.includes("main.css") ? defaultCSS : lightCSS;
+      var newCSS = currentCSS === defaultCSS ? lightCSS : defaultCSS;
+
+      console.log("Nowy styl:", newCSS);
+
+      // **Dodajemy efekt zanikania przed zmianą**
+      document.body.classList.add("fade-out");
+      document.body.style.visibility = "hidden";
+      document.body.style.opacity = "0";
+      setTimeout(() => {
+        metaTag.href = newCSS + "?v=" + new Date().getTime();
+        localStorage.setItem("minima-ss", newCSS);
+        console.log("Zapisano nowy styl:", localStorage.getItem("minima-ss"));
+
+        // **Dodajemy efekt pojawiania po zmianie**
+        
+        document.body.classList.remove("fade-out");
+        document.body.classList.add("fade-in");
+        document.body.style.visibility = "visible";
+        document.body.style.opacity = "1";
+      }, 300); // Musi być równe czasowi `transition` w CSS (0.3s)
+    });
+  });
+</script>
+
+  </body>
+
+</html>
