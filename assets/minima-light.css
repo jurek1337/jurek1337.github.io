@@ -654,27 +654,6 @@ img {
   justify-content: space-between; /* Rozmieszcza elementy równomiernie */
 }
 
-.item {
-  width: 33%; /* Ustala szerokość każdego div'a na 33% */
-  text-align: center; /* Wyrównuje tekst i obrazek do środka */
-}
-
-.item img {
-  width: 100%; /* Dopasowuje szerokość obrazka do szerokości kontenera */
-  height: auto; /* Utrzymuje proporcje obrazka */
-}
-
-.item p {
-  margin-top: 10px; /* Dodaje odstęp między obrazkiem a tekstem */
-}
-
-#skin-switch-box {
-  background-color: pink;
-  width: 2%;
-  height: 2%;
-  margin: 2%;
-}
-
 /*# sourceMappingURL=main.css.map */
 
 img {
