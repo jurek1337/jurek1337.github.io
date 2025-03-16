@@ -722,3 +722,6 @@ img {
   display: inline-block;
   vertical-align: middle;
 }
+.menu-icon {
+  background: lightgray;
+}
