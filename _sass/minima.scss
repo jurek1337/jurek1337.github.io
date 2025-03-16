@@ -124,3 +124,10 @@ img {
   display: inline-block;
   vertical-align: middle;
 }
+@media (max-width: 600px) {
+  #skin-switch-box {
+    width: 8vw;
+    height: 8vw;
+    aspect-ratio: 1;
+  }
+}
