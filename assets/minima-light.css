@@ -728,5 +728,6 @@ img {
 @media (max-width: 600px) {
   #skin-switch-box {
     width: 8vw;
+    height: auto
   }
 }
