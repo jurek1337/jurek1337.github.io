@@ -707,6 +707,7 @@ img {
   aspect-ratio: 1; 
   margin: 5%;
   padding: 1%;
+  display: -webkit-inline-box
 }
 .site-title {
   display: flex;
