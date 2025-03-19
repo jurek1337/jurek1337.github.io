@@ -4,8 +4,8 @@ title:  "AI Stable Diffusion Server"
 date:   2025-03-03 17:41:48 +0100
 categories: posts
 ---
-One day in old friend's meetup we were talking about Artiffical Intelligence and image generation. And there's and invention - homemade server, which doesn't have a little amount of credits to use per day.
-So, we go to work. We combined rubbish and parts from closed computer shop.
+One day, during a meetup with old friends, we started talking about Artificial Intelligence and image generation. That’s when the idea was born—a homemade AI server without the daily credit limitations of cloud-based solutions.  
+So, we got to work. We gathered scrap parts and components from a closed computer shop to build our own solution.
 
 ![AI Server First Version]({{ '/assets/server.jpg' | relative_url }})
 *First version of the server, with underclocked Pentium E6500, which is not supported by ROCm*
@@ -18,5 +18,5 @@ So, we go to work. We combined rubbish and parts from closed computer shop.
 * *HDD* Toshiba 1TB
 * *OS* Red Hat Enterprise Linux
 
-Works still in progress... we first try completely rubbish Conroe-based system with 4GB of RAM, but ROCm doesn't support this.
-If I done, you can see something [here](http://ai.danielakajerzy.net). And I wrote some new informations.
+The work is still in progress... At first, we tried using a completely rubbish Conroe-based system with 4GB of RAM, but ROCm doesn't support it
+Once it's fully functional, you’ll be able to check it out [here](http://ai.danielakajerzy.net). And I'll also share more updates soon! 
